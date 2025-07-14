@@ -9,7 +9,7 @@
       "repo": "https://github.com/gnadgnaoh/kernel_xiaomi_sweet",
       "branch": "susfs-159"
     },
-    "use_dtb": true,
+    "use_dtb": false,
     "kp": {
       "use": false,
       "kpimg_link": ""

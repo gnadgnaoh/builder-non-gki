@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_mojito",
       "branch": "ksu"
     },
-    "use_dtb": true,
+    "use_dtb": false,
     "kp": {
       "use": false,
       "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
