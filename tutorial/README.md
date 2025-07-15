@@ -9,8 +9,8 @@ If you have a device that have kernel below 5.4, then this tutorial is for you! 
   - [⚠ Disclaimer](#-disclaimer)
   - [Notes References](#notes-references)
   - [1. Clone your kernel source](#1-clone-your-kernel-source)
-  - [2. Create codespaces and setup some args (Check NOTE\_1 and NODE\_2 before process)](#2-create-codespaces-and-setup-some-args-check-note_1-and-node_2-before-process)
-  - [3. Apply patches for KSU and susfs (Check NOTE\_1 and NODE\_2 before process)](#3-apply-patches-for-ksu-and-susfs-check-note_1-and-node_2-before-process)
+  - [2. Create codespaces and setup some args (Check NOTE_1 and NODE_2 before process)](#2-create-codespaces-and-setup-some-args-check-note_1-and-node_2-before-process)
+  - [3. Apply patches for KSU and susfs (Check NOTE_1 and NODE_2 before process)](#3-apply-patches-for-ksu-and-susfs-check-note_1-and-node_2-before-process)
   - [3.1. Fix the patches](#31-fix-the-patches)
   - [3.2. Copy susfs files from susfs4ksu source (Only do if you use susfs)](#32-copy-susfs-files-from-susfs4ksu-source-only-do-if-you-use-susfs)
   - [3.3. Push the changes into your repo](#33-push-the-changes-into-your-repo)
@@ -24,9 +24,9 @@ If you have a device that have kernel below 5.4, then this tutorial is for you! 
 - This build kernel tutorial is provided **as-is** with **no warranties or guarantees** of stability, compatibility, or safety.
 - Flashing custom kernels may **void your warranty** and **brick your device** if done incorrectly.
 - The maintainer(s) of this project are **not responsible** for:
-  - Data loss  
-  - Bootloops  
-  - Hardware damage  
+  - Data loss
+  - Bootloops
+  - Hardware damage
   - Violations of warranty or service terms
 - Most of kernel won't be boooted in the stock rom so be careful
 
@@ -36,12 +36,12 @@ If you do not understand what you're doing, please **do not proceed**.
 
 ---
 
-*Happy building and stay safe!*
+_Happy building and stay safe!_
 
 ## Notes References
 
 - NOTE_1: If you don't need ksu, susfs or CONFIG something, skip this step!
-- NOTE_2: If you already have ksu + susfs in your source and configured, skip this step. You can check that by trying to open `fs/open.c` to check `CONFIG_KSU` and `fs/susfs.c` to check if already have susfs. After that check `arch/arm64/configs/<device_codename>_defconfig` see if already have configured bye search `CONFIG_KSU_`.
+- NOTE*2: If you already have ksu + susfs in your source and configured, skip this step. You can check that by trying to open `fs/open.c` to check `CONFIG_KSU` and `fs/susfs.c` to check if already have susfs. After that check `arch/arm64/configs/<device_codename>_defconfig` see if already have configured bye search `CONFIG_KSU*`.
 
 ## 1. Clone your kernel source
 
@@ -83,7 +83,7 @@ If you know what you're doing, you can do your config here (disable / enable it)
 Now if you need susfs + ksu, paste this config below your file
 
 ```env
-CONFIG_KSU=y 
+CONFIG_KSU=y
 CONFIG_KSU_LSM_SECURITY_HOOKS=y
 CONFIG_KSU_SUSFS=y
 CONFIG_KSU_SUSFS_SUS_PATH=y
@@ -222,13 +222,13 @@ Use this config template below (remove the comments before continue)
   "kp": {
     "use": false, // If you don't use kernel patch (APatch) leave this alone
     "kpimg_link": "" // If you don't use kernel patch (APatch) leave this alone
-  }, 
+  },
   "kernelsu": {
     "enable": true, // If you don't use ksu, set to false
     "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh", // The setup link of ksu, check the manual in their repo
     "setupArg": "next", // The setup branch of ksu, check the manual in their repo
     "setupName": "KernelSU-Next", // The setup folder name of ksu, it will be the same as repo. Except SukiSU-Ultra will be KernelSU
-    "needPatch": true, // If you need to susfs enable patch for using. Some root solution won't need this 
+    "needPatch": true, // If you need to susfs enable patch for using. Some root solution won't need this
     "susfsLink": "https://raw.githubusercontent.com/wodanesdag/susfs4ksu/refs/heads/next-4.19/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch" // Patch link
   },
   "toolchains": [
@@ -242,7 +242,7 @@ Use this config template below (remove the comments before continue)
   "ccache": true, // Don't touch this if you don't know what are you doing
   "params": {
     "ARCH": "arm64", // Your device arch, it can be arm or arm64. But mostly in arm64 today
-    "CC": "clang-AOSP/bin/clang",  // Don't touch this if you don't know what are you doing
+    "CC": "clang-AOSP/bin/clang", // Don't touch this if you don't know what are you doing
     "externalCommand": {
       "KBUILD_BUILD_HOST": "perfc.org", // Your name. Can be whatever you want here. You will see in the kernel info is <yourname>@<yourhost>
       "KBUILD_BUILD_USER": "rainyxeon", // Your host. Can be whatever you want here. You will see in the kernel info is <yourname>@<yourhost>

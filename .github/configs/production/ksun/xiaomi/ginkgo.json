@@ -3,7 +3,7 @@
     "kernelSource": {
       "device": "ginkgo",
       "vendor": "xiaomi",
-      "name": "bimasakti-sukisu",
+      "name": "bimasakti-kernelsu-next",
       "defconfig": "vendor/ginkgo-perf_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
@@ -11,14 +11,14 @@
     },
     "use_dtb": true,
     "kp": {
-      "use": true,
+      "use": false,
       "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-revert",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/sidex15/KernelSU-Next/refs/heads/next/kernel/setup.sh",
+      "setupArg": "next-susfs-experimental",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
@@ -79,7 +79,7 @@
     "kernelSource": {
       "device": "ginkgo",
       "vendor": "xiaomi",
-      "name": "bimasakti-sukisu-nondynamic",
+      "name": "bimasakti-kernelsu-next-nondynamic",
       "defconfig": "vendor/ginkgo-perf_defconfig",
       "extraConfig": "vendor/ginkgo_non_a11.config",
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
@@ -87,14 +87,14 @@
     },
     "use_dtb": true,
     "kp": {
-      "use": true,
+      "use": false,
       "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-revert",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/sidex15/KernelSU-Next/refs/heads/next/kernel/setup.sh",
+      "setupArg": "next-susfs-experimental",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
@@ -155,7 +155,7 @@
     "kernelSource": {
       "device": "ginkgo",
       "vendor": "xiaomi",
-      "name": "bimasakti-sukisu-nondynamic-a11",
+      "name": "bimasakti-kernelsu-next-nondynamic-a11",
       "defconfig": "vendor/ginkgo-perf_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
@@ -163,14 +163,14 @@
     },
     "use_dtb": true,
     "kp": {
-      "use": true,
+      "use": false,
       "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-revert",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/sidex15/KernelSU-Next/refs/heads/next/kernel/setup.sh",
+      "setupArg": "next-susfs-experimental",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },

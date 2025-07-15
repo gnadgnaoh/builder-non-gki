@@ -7,18 +7,18 @@ on:
   workflow_dispatch:
     inputs:
       config_type:
-        description: 'Choose a config type'
+        description: "Choose a config type"
         required: true
         type: choice
-        default: 'production'
+        default: "production"
         options:
           - production
           - development
       config_mode:
-        description: 'Choose a root solution, if this not empty, it will only build that specific type'
+        description: "Choose a root solution, if this not empty, it will only build that specific type"
         required: false
         type: choice
-        default: 'everything'
+        default: "everything"
         options:
           - everything
           - ksun
@@ -26,18 +26,18 @@ on:
           - vanilla
           - kp
       config_file:
-        description: 'Path to a specific config JSON file (optional). Leave blank to use all configs.'
+        description: "Path to a specific config JSON file (optional). Leave blank to use all configs."
         required: false
-        default: ''
+        default: ""
         type: string
       release_mode:
-        description: 'Create a release for this run?'
+        description: "Create a release for this run?"
         required: true
         type: choice
-        default: 'false'
+        default: "false"
         options:
-          - 'true'
-          - 'false'
+          - "true"
+          - "false"
 
 permissions:
   contents: write
@@ -67,7 +67,10 @@ jobs:
             if [ -f "./.github/configs/$CONFIG_TYPE/$CONFIG_FILE" ]; then
               echo "Using specified config file: ./.github/configs/$CONFIG_TYPE/$CONFIG_FILE"
               echo "repos<<EOF" >> $GITHUB_OUTPUT
-              jq -s '[.[][]]' "./.github/configs/$CONFIG_TYPE/$CONFIG_FILE" >> $GITHUB_OUTPUT
+              CONFIG_PATH="./.github/configs/$CONFIG_TYPE/$CONFIG_FILE"
+              # Strip BOM
+              sed -i '1s/^\xEF\xBB\xBF//' "$CONFIG_PATH"
+              jq -s '[.[][]]' "$CONFIG_PATH" >> $GITHUB_OUTPUT
               echo "EOF" >> $GITHUB_OUTPUT
             else
               echo "ERROR: Specified config file './.github/configs/$CONFIG_TYPE/$CONFIG_FILE' does not exist!" >&2
@@ -78,10 +81,12 @@ jobs:
             echo "No config_file input provided."
 
             if [[ "$CONFIG_MODE" != "everything" ]]; then
-              echo "Using only files starting with '$CONFIG_MODE-' in .github/configs/$CONFIG_TYPE/"
+              echo "Using only files from '$CONFIG_MODE' in .github/configs/$CONFIG_TYPE/"
+              find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json"
               FILES=$(find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json")
             else
               echo "Using all JSON files in .github/configs/$CONFIG_TYPE/"
+              find ".github/configs/$CONFIG_TYPE" -type f -name "*.json"
               FILES=$(find ".github/configs/$CONFIG_TYPE" -type f -name '*.json')
             fi
 
@@ -90,8 +95,23 @@ jobs:
               exit 1
             fi
 
+            repos_json="[]"
+            for process_file in $FILES; do
+              echo "Checking: $process_file"
+              # Strip BOM if present (in-place)
+              sed -i '1s/^\xEF\xBB\xBF//' "$process_file"
+              if ! jq empty "$process_file" >/dev/null 2>&1; then
+                echo "[+] Invalid JSON: $process_file"
+                jq '.' "$process_file"
+                exit 1
+              else
+                echo "[-] Valid: $process_file"
+                repos_json=$(jq -s 'add' <(echo "$repos_json") "$process_file")
+              fi
+            done
+
             echo "repos<<EOF" >> $GITHUB_OUTPUT
-            jq -s '[.[][]]' $FILES >> $GITHUB_OUTPUT
+            echo "$repos_json" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
           fi
       - name: "Set builddate"
@@ -167,6 +187,7 @@ jobs:
         run: |
           ccache -o compression=false -o cache_dir=$HOME/.ccache
           echo "CACHE_KEY=$(echo -n "${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}" | sha1sum | cut -c1-12)" >> $GITHUB_OUTPUT
+          echo "PREV_RUN_NUMBER=$(( ${{ github.run_number }} - 1 ))" >> $GITHUB_ENV
       - name: "Cache ccache files"
         if: ${{ env.ccache == 'true' }}
         uses: actions/cache@v3
@@ -174,9 +195,9 @@ jobs:
           path: |
             ~/.ccache
             ${{ env.OUT_DIR }}
-          key: ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}-${{ env.builddate }}-${{ github.run_number }}
+          key: ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}-${{ env.builddate }}-${{ env.PREV_RUN_NUMBER }}
           restore-keys: |
-            ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}-${{ env.builddate }}-${{ github.run_number }}
+            ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}-${{ env.builddate }}-${{ env.PREV_RUN_NUMBER }}
       - name: "Setup Anykernel3"
         if: ${{ env.useAnykernel == 'true' }}
         env:
@@ -190,7 +211,7 @@ jobs:
         run: |
           git clone --recursive --depth=1 -j $(nproc) --branch $KERNEL_BRANCH $KERNEL_REPO $KERNEL_NAME
           echo -e "\n ! Kernel is at commit: $(git -C $KERNEL_NAME rev-parse HEAD)\n"
-          echo "Clone kernel source => ($KERNEL_REPO)"         
+          echo "Clone kernel source => ($KERNEL_REPO)"
       - name: "Get toolchains"
         env:
           toolchains: "${{ toJSON(matrix.repos.toolchains) }}"
@@ -414,7 +435,7 @@ jobs:
           path: ./AnyKernel3/anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.zip
       - name: "Pack kernel image"
         if: ${{ env.useImage == 'true' }}
-        run: | 
+        run: |
           curl -L -O https://github.com/Shubhamvis98/AIK/raw/4ac321dfd48e16344e6146c505708aa720ff0bb3/bin/magiskboot_x86
           chmod +x ./magiskboot_x86
           mkdir wrap_kernel
