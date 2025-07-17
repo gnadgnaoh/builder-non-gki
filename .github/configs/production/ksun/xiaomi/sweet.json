@@ -18,9 +18,9 @@
     "kernelsu": {
       "enable": true,
       "setupLink": "https://raw.githubusercontent.com/sidex15/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next",
+      "setupArg": "next-susfs",
       "setupName": "KernelSU-Next",
-      "needPatch": true,
+      "needPatch": false,
       "susfsLink": "https://raw.githubusercontent.com/gnadgnaoh/susfs4ksu/refs/heads/next-4.14/kernel_patches/KernelSU/0001-kernel-implement-susfs-v1.5.9-KernelSU-Next-v1.0.9.patch"
     },
     "toolchains": [
