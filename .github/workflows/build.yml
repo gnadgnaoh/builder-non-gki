@@ -296,7 +296,7 @@ jobs:
             args="$args ARCH=$ARCH"
           fi
           if [ -n "$KCFLAGS" ]; then
-            args="$args KCFLAGS=$KCFLAGS"
+            args="$args KCFLAGS=\"$KCFLAGS\""
           fi
           if [ -n "$CC" ]; then
             if [[ "$CC" == *"/"* ]]; then
