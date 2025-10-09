@@ -7,7 +7,7 @@
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/vantom_next_kernel_xiaomi_sm6150",
-      "branch": "VantomNext-1.5.11"
+      "branch": "VantomNext"
     },
     "output_image": "Image",
     "use_python2": false,
