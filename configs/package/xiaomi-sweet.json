@@ -6,7 +6,7 @@
       "name": "vantomnext-experimental-ksun",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/kernel-build-from-rainyland/vantom_next_kernel_xiaomi_sm6150",
+      "repo": "https://github.com/gnadgnaoh/vantom_next_kernel_xiaomi_sm6150",
       "branch": "VantomNext-1.5.11"
     },
     "output_image": "Image",
@@ -19,8 +19,8 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next",
+      "setupLink": "https://raw.githubusercontent.com/gnadgnaoh/KernelSU-Next/refs/heads/next-susfs/kernel/setup.sh",
+      "setupArg": "next-susfs",
       "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
