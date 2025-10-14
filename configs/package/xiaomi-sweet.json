@@ -27,7 +27,7 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r563880.git",
+        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/47e1fad3c1d7c647b49597e0ea85c5d8e43a978f/clang-r574158.tar.gz",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
