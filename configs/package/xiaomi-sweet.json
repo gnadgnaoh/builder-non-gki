@@ -6,7 +6,7 @@
       "name": "vantomnext-experimental-ksun",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/gnadgnaoh/sweetie_star_kernel_xiaomi_sweet",
+      "repo": "https://github.com/DPR-KernelArchive/sweetie_star_kernel_xiaomi_sweet",
       "branch": "sixteen-qpr1"
     },
     "output_image": "Image",
@@ -19,9 +19,9 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/sidex15/KernelSU/refs/heads/susfs-rksu-master/kernel/setup.sh",
-      "setupArg": "susfs-rksu-master",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/refs/heads/legacy/kernel/setup.sh",
+      "setupArg": "legacy",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
