@@ -7,7 +7,7 @@
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/sweetie_star_kernel_xiaomi_sweet",
-      "branch": "sixteen-qpr1"
+      "branch": "susfs"
     },
     "output_image": "Image",
     "use_python2": false,
@@ -19,9 +19,9 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://github.com/DR-KernelArchive/KernelSU-Unified/raw/susfs/kernel/setup.sh",
-      "setupArg": "normal",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/gnadgnaoh/KernelSU-Next/refs/heads/susfs/kernel/setup.sh",
+      "setupArg": "susfs",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
