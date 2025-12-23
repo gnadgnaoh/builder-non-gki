@@ -3,7 +3,7 @@
     "kernelSource": {
       "device": "sweet",
       "vendor": "xiaomi",
-      "name": "sweetie-star",
+      "name": "sweetie-star-test",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/sweetie_star_kernel_xiaomi_sweet",
