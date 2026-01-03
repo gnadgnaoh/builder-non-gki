@@ -19,9 +19,9 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/MrShockWAVEog/KernelSU-Next/refs/heads/shockwave/kernel/setup.sh",
-      "setupArg": "shockwave",
-      "setupName": "KernelSU-Next",
+      "setupLink": "https://raw.githubusercontent.com/gnadgnaoh/KernelSU/refs/heads/susfs-rksu-master/kernel/setup.sh",
+      "setupArg": "susfs-rksu-master",
+      "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
     },
