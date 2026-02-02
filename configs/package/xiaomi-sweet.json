@@ -19,8 +19,8 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/pershoot/KernelSU-Next/refs/heads/dev-susfs/kernel/setup.sh",
-      "setupArg": "dev-susfs",
+      "setupLink": "https://raw.githubusercontent.com/sidex15/KernelSU-Next/refs/heads/legacy/kernel/setup.sh",
+      "setupArg": "legacy",
       "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
