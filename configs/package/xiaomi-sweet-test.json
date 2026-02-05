@@ -3,11 +3,11 @@
     "kernelSource": {
       "device": "sweet",
       "vendor": "xiaomi",
-      "name": "sweetie-star-test",
+      "name": "sweetie-star",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/sweetie_star_kernel_xiaomi_sweet_test",
-      "branch": "sixteen-qpr1"
+      "branch": "susfs"
     },
     "output_image": "Image",
     "use_python2": false,
@@ -19,7 +19,7 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/refs/heads/stable/kernel/setup.sh",
+      "setupLink": "https://raw.githubusercontent.com/gnadgnaoh/KernelSU-Next/refs/heads/legacy/kernel/setup.sh",
       "setupArg": "legacy",
       "setupName": "KernelSU-Next",
       "needPatch": false,
@@ -27,7 +27,7 @@
     },
     "toolchains": [
       {
-        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/167e11df8c330bced88cdf5808f61f41d9eab330/clang-r584948.tar.gz",
+        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/105aba85d97a53d364585ca755752dae054b49e8/clang-r584948b.tar.gz",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
