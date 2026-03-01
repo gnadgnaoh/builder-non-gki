@@ -7,7 +7,7 @@
       "defconfig": "begonia_user_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/begonia_kernel_dev",
-      "branch": "bpf-5.10"
+      "branch": "KSU"
     },
     "output_image": "Image",
     "use_python2": false,
@@ -19,9 +19,9 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/refs/heads/legacy/kernel/setup.sh",
-      "setupArg": "legacy",
-      "setupName": "KernelSU-Next",
+      "setupLink": "https://raw.githubusercontent.com/rsuntk/KernelSU/refs/heads/main/kernel/setup.sh",
+      "setupArg": "main",
+      "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
     },
