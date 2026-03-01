@@ -7,7 +7,7 @@
       "defconfig": "begonia_user_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/begonia_kernel_dev",
-      "branch": "bpf-5.10"
+      "branch": "bka"
     },
     "output_image": "Image",
     "use_python2": false,
