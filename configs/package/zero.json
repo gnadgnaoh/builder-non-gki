@@ -6,8 +6,8 @@
       "name": "zero-ksu",
       "defconfig": "begonia_user_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/gnadgnaoh/kernel_xiaomi_mt6785",
-      "branch": "fifteen-fixed"
+      "repo": "https://github.com/gnadgnaoh/begonia_kernel_dev",
+      "branch": "bpf-5.10"
     },
     "output_image": "Image",
     "use_python2": false,
