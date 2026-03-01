@@ -7,7 +7,7 @@
       "defconfig": "begonia_user_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/begonia_kernel_dev",
-      "branch": "KSU"
+      "branch": "bpf-5.10"
     },
     "output_image": "Image",
     "use_python2": false,
@@ -19,15 +19,15 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/rsuntk/KernelSU/refs/heads/main/kernel/setup.sh",
-      "setupArg": "main",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/refs/heads/legacy/kernel/setup.sh",
+      "setupArg": "legacy",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/DR-KernelArchive/clang/r498229b.git",
+        "repo": "https://gitlab.com/DR-KernelArchive/clang/r487747c.git",
         "branch": "master",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
