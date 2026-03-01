@@ -7,9 +7,9 @@
       "defconfig": "begonia_user_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/begonia_kernel_dev",
-      "branch": "bka"
+      "branch": "bpf-5.10"
     },
-    "output_image": "Image",
+    "output_image": "Image.gz",
     "use_python2": false,
     "additional_script_link": "disabled",
     "additional_post_script_link": "disabled",
@@ -27,7 +27,7 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/DR-KernelArchive/clang/r487747c.git",
+        "repo": "https://gitlab.com/DR-KernelArchive/clang/r498229b.git",
         "branch": "master",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
