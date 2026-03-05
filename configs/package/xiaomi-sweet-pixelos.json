@@ -3,74 +3,13 @@
     "kernelSource": {
       "device": "sweet",
       "vendor": "xiaomi",
-      "name": "sukisu-susfs-159",
+      "name": "sweet-pos",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/kernel-build-from-rainyland/pixelos_kernel_xiaomi_sm6150",
-      "branch": "susfs"
+      "repo": "https://github.com/gnadgnaoh/android_kernel_xiaomi_sm6150",
+      "branch": "sixteen-qpr2"
     },
-    "output_image": "Image.gz-dtb",
-    "use_python2": false,
-    "additional_script_link": "disabled",
-    "additional_post_script_link": "disabled",
-    "kp": {
-      "use": true,
-      "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
-    },
-    "kernelsu": {
-      "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-main",
-      "setupName": "KernelSU",
-      "needPatch": false,
-      "susfsLink": ""
-    },
-    "toolchains": [
-      {
-        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
-        "branch": "master",
-        "name": "clang-AOSP",
-        "binPath": ["/bin"]
-      }
-    ],
-    "ccache": true,
-    "params": {
-      "ARCH": "arm64",
-      "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2",
-      "build_out": "Image.gz-dtb dtbo.img dtb.img",
-      "externalCommand": {
-        "KBUILD_BUILD_HOST": "perfc.org",
-        "KBUILD_BUILD_USER": "rainyxeon",
-        "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
-        "CROSS_COMPILE_ARM32": "clang-AOSP/bin/arm-linux-gnueabi-",
-        "LD": "clang-AOSP/bin/ld.lld",
-        "LLVM": "1",
-        "LLVM_IAS": "1"
-      }
-    },
-    "AnyKernel3": {
-      "use": true,
-      "release": true,
-      "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "sweet"
-    },
-    "image": {
-      "use": false,
-      "imageUrl": ""
-    }
-  },
-    {
-    "kernelSource": {
-      "device": "sweet",
-      "vendor": "xiaomi",
-      "name": "ksun-susfs-159",
-      "defconfig": "sweet_defconfig",
-      "extraConfig": "",
-      "repo": "https://github.com/kernel-build-from-rainyland/pixelos_kernel_xiaomi_sm6150",
-      "branch": "susfs"
-    },
-    "output_image": "Image.gz-dtb",
+    "output_image": "Image",
     "use_python2": false,
     "additional_script_link": "disabled",
     "additional_post_script_link": "disabled",
@@ -80,16 +19,16 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next-custom-makefile",
+      "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/refs/heads/legacy/kernel/setup.sh",
+      "setupArg": "legacy",
       "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
-        "branch": "master",
+        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/42d2c090c14c9c7f4dfd365ae551e2b959dc775c/clang-r584948b.tar.gz",
+        "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
@@ -98,8 +37,8 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2",
-      "build_out": "Image.gz-dtb dtbo.img dtb.img",
+      "KCFLAGS": "-O3 -march=armv8.2-a+crypto+fp16+dotprod -mcpu=cortex-a76 -mtune=cortex-a76",
+      "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
