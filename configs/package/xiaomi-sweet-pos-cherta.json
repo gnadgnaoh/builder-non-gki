@@ -37,7 +37,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2 -march=armv8.2-a+crypto+fp16+dotprod -mcpu=cortex-a76 -mtune=cortex-a76",
+      "KCFLAGS": "-O2 -mcpu=cortex-a76+crc+crypto -march=armv8.2-a+lse+fp16+dotprod",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
