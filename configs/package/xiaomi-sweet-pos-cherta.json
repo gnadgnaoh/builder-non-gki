@@ -3,11 +3,11 @@
     "kernelSource": {
       "device": "sweet",
       "vendor": "xiaomi",
-      "name": "sweet-pos-cherta",
+      "name": "sweet-spiteful",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/android_kernel_xiaomi_sm6150",
-      "branch": "16.2"
+      "branch": "evox"
     },
     "output_image": "Image",
     "use_python2": false,
@@ -19,15 +19,15 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/refs/heads/legacy/kernel/setup.sh",
-      "setupArg": "legacy",
-      "setupName": "KernelSU-Next",
+      "setupLink": "https://raw.githubusercontent.com/backslashxx/KernelSU/refs/heads/master/kernel/setup.sh",
+      "setupArg": "master",
+      "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
     },
     "toolchains": [
       {
-        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/9b144befdfd93b90e02c663504fb9f4b95f9faf8/clang-r596125.tar.gz",
+        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/8b6826407e25a197d7cf7ceacab0bf67c11173de/clang-r596125.tar.gz",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
@@ -37,7 +37,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2 -mcpu=cortex-a76+crc+crypto -march=armv8.2-a+lse+fp16+dotprod",
+      "KCFLAGS": "-O2",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
