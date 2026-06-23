@@ -27,7 +27,7 @@
     },
     "toolchains": [
       {
-        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/8b6826407e25a197d7cf7ceacab0bf67c11173de/clang-r596125.tar.gz",
+        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/af3fae2c8e67673c43217d0cf75dbf3f268de272/clang-r596125.tar.gz",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
