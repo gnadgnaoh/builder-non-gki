@@ -66,8 +66,8 @@
       "branch": "sweet"
     },
     "image": {
-      "use": false,
-      "imageUrl": ""
+      "use": true,
+      "imageUrl": "https://github.com/Rainy-PlayGround/release-host/releases/download/host/boot-sweet_20260610_0532.img"
     }
   }
 ]
