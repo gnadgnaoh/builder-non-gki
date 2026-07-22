@@ -7,7 +7,7 @@
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/pos_kernel_xiaomi_sm6150",
-      "branch": "ksun"
+      "branch": "ksu"
     },
     "output_image": "Image",
     "use_python2": false,
@@ -27,7 +27,7 @@
     },
     "toolchains": [
       {
-        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/8b6826407e25a197d7cf7ceacab0bf67c11173de/clang-r596125.tar.gz",
+        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/af3fae2c8e67673c43217d0cf75dbf3f268de272/clang-r596125.tar.gz",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
@@ -37,7 +37,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2 -march=armv8.2-a+crypto+fp16+dotprod -mcpu=cortex-a76 -mtune=cortex-a76",
+      "KCFLAGS": "-O2",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -66,8 +66,8 @@
       "branch": "sweet"
     },
     "image": {
-      "use": false,
-      "imageUrl": ""
+      "use": true,
+      "imageUrl": "https://github.com/Rainy-PlayGround/release-host/releases/download/host/boot-sweet_20260610_0532.img"
     }
   }
 ]
