@@ -7,7 +7,7 @@
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/android_kernel_xiaomi_sm6150",
-      "branch": "evox"
+      "branch": "pos"
     },
     "output_image": "Image",
     "use_python2": false,
@@ -27,7 +27,7 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/DR-KernelArchive/clang/r563880",
+        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/af3fae2c8e67673c43217d0cf75dbf3f268de272/clang-r596125.tar.gz",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
