@@ -3,7 +3,7 @@
     "kernelSource": {
       "device": "sweet",
       "vendor": "xiaomi",
-      "name": "sweet-pos-a17",
+      "name": "sweet-pos-a16qpr2",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/gnadgnaoh/pos_kernel_xiaomi_sm6150",
@@ -67,7 +67,7 @@
     },
     "image": {
       "use": true,
-      "imageUrl": "https://github.com/gnadgnaoh/boot-pos-a17/releases/download/1.0/boot-sweet_20260920_1356.img"
+      "imageUrl": "https://github.com/gnadgnaoh/boot-pos-a17/releases/download/1.0/boot-sweet_20260610_0532.img"
     }
   }
 ]
