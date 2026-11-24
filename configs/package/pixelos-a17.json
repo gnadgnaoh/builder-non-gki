@@ -19,7 +19,7 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/nleloc/xxksu/refs/heads/master/kernel/setup.sh",
+      "setupLink": "https://raw.githubusercontent.com/gnadgnaoh/xxksu/refs/heads/master/kernel/setup.sh",
       "setupArg": "master",
       "setupName": "KernelSU",
       "needPatch": false,
